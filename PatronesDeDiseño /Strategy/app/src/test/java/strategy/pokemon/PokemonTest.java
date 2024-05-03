@@ -21,7 +21,7 @@ class PokemonTest {
     @Test
     void testAtaqueEspecial() {
         Pokemon pikachu = new Pokemon("Pikachu", 100, 50, 40, 70, 60);
-        Pokemon charmander = new Pokemon("Charmander", 100, 55, 35, 65, 80);
+        Pokemon charmander = new Pokemon("Charmander", 100, 55, 35, 65, 100);
 
         pikachu.setAtaqueStrategy(new AtaqueEspecial());
         charmander.setAtaqueStrategy(new AtaqueEspecial());
