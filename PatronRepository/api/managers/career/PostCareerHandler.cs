@@ -1,6 +1,6 @@
 using MediatR;
 
-public class PostCareerHandler : IRequestHandler<PostCareer, Career>
+public class PostCareerHandler : IRequestHandler<PostCareer, int>
 {
     private readonly ICareerRepository _repository;
 
@@ -9,7 +9,7 @@ public class PostCareerHandler : IRequestHandler<PostCareer, Career>
         _repository = repository;
     }
         
-    public async Task<Career> Handle(PostCareer request, CancellationToken cancellationToken)
+    public async Task<int> Handle(PostCareer request, CancellationToken cancellationToken)
     {
         var modifiedRows = await _repository.Create(request.Career);
         return modifiedRows;

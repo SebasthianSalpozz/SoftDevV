@@ -1,6 +1,6 @@
 using MediatR;
 
-public class DeleteStudentHandler : IRequestHandler<DeleteStudent, Student>
+public class DeleteStudentHandler : IRequestHandler<DeleteStudent, int>
 {
     private readonly IStudentRepository _repository;
 
@@ -8,7 +8,7 @@ public class DeleteStudentHandler : IRequestHandler<DeleteStudent, Student>
     {
         _repository = repository;
     }
-    public async Task<Student> Handle(DeleteStudent request, CancellationToken cancellationToken)
+    public async Task<int> Handle(DeleteStudent request, CancellationToken cancellationToken)
     {
         var student = await _repository.GetById(request.Student);
         var modifiedRows = await _repository.Delete(student);

@@ -1,6 +1,6 @@
 using MediatR;
 
-public class PostStudentHandler : IRequestHandler<PostStudent, Student>
+public class PostStudentHandler : IRequestHandler<PostStudent, int>
 {
     private readonly IStudentRepository _repository;
 
@@ -9,7 +9,7 @@ public class PostStudentHandler : IRequestHandler<PostStudent, Student>
         _repository = repository;
     }
 
-    public async Task<Student> Handle(PostStudent request, CancellationToken cancellationToken)
+    public async Task<int> Handle(PostStudent request, CancellationToken cancellationToken)
     {
         var modifiedRows = await _repository.Create(request.Student);
         return modifiedRows;

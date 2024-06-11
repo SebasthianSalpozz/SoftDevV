@@ -1,6 +1,6 @@
 using MediatR;
 
-public class PostStudent : IRequest<Student>
+public class PostStudent : IRequest<int>
 {
     public Student Student { get; set; }
 

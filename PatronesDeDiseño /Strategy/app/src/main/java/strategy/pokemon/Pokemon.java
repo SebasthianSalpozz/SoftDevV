@@ -70,7 +70,7 @@ class Pokemon {
     }
 
     public void setAtaqueStrategy(AtaqueStrategy ataqueStrategy) {
-        this.ataqueStrategy = ataqueStrategy;
+            this.ataqueStrategy = ataqueStrategy;
     }
 
     public void atacar(Pokemon objetivo) {

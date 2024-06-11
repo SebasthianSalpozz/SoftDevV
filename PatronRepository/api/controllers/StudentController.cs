@@ -10,13 +10,10 @@ public class StudentController : ControllerBase
   private readonly IMediator _mediator;
   private readonly IMapper _mapper;
 
-  private readonly ILogHandler _logHandler;
-
-  public StudentController(IMediator mediator, IMapper mapper , ILogHandler logHandler)
+  public StudentController(IMediator mediator, IMapper mapper)
   {
     _mediator = mediator;
     _mapper = mapper;
-    _logHandler = logHandler;
   }
 
   [HttpGet("idStudent")]
@@ -42,7 +39,6 @@ public class StudentController : ControllerBase
   [HttpPost, Route("subscribe")]
   public async Task<IActionResult> Post([Required] Guid idCareer, Student student)
   {
-    _logHandler.Log(Severity.INFO, "Not Implemented");
     return Ok();
   }
 

@@ -10,19 +10,16 @@ public abstract class BaseRepository<T> : IBaseRepository<T> where T : class, IE
     _context = context;
   }
 
-  public async Task<T> Create(T entity)
+  public async Task<int> Create(T entity)
   {
     await _context.Set<T>().AddAsync(entity);
-
-    await _context.SaveChangesAsync();
-    return entity;
+    return await _context.SaveChangesAsync();
   }
 
-  public async Task<T> Delete(T entity)
+  public async Task<int> Delete(T entity)
   {
     _context.Set<T>().Remove(entity);
-    await _context.SaveChangesAsync();
-    return entity;
+    return await _context.SaveChangesAsync();
   }
 
   public void Dispose()
