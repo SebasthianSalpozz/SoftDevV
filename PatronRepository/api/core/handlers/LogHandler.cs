@@ -1,14 +1,13 @@
-
 using log4net;
 
-public class LogHandler : ILogHandler
+public class LogHandler
 {
-  private ILog _logger;
-  // private static LogHandler instance;
+  private readonly ILog _logger;
+  private static LogHandler instance;
 
-  // public static LogHandler Instance => instance ?? (instance = new LogHandler());
+  public static LogHandler Instance => instance ?? (instance = new LogHandler());
 
-  public LogHandler()
+  private LogHandler()
   {
     _logger = LogManager.GetLogger(typeof(LogHandler));
   }
@@ -33,10 +32,5 @@ public class LogHandler : ILogHandler
         _logger.Fatal(message);
         break;
     }
-  }
-
-  public void Dispose()
-  {
-    _logger = null;
   }
 }

@@ -20,8 +20,6 @@ builder.Services.AddDbContext<BaseContext>(options
 builder.Logging.AddLog4Net("log.config");
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<ICareerRepository, CareerRepository>();
-builder.Services.AddSingleton<ILogHandler, LogHandler>();
-
 
 
 builder.Services.AddControllers()

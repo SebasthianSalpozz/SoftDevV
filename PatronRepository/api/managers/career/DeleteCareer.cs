@@ -1,6 +1,6 @@
 using MediatR;
 
-public class DeleteCareer : IRequest<Career>
+public class DeleteCareer : IRequest<int>
 {
     public Guid Career { get; set; }
 

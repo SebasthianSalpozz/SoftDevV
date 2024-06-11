@@ -1,6 +1,6 @@
 using MediatR;
 
-public class DeleteStudent : IRequest<Student>
+public class DeleteStudent : IRequest<int>
 {
     public Guid Student { get; set; }
 

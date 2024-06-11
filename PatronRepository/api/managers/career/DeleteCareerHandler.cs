@@ -1,6 +1,6 @@
 using MediatR;
 
-public class DeleteCareerHandler : IRequestHandler<DeleteCareer, Career>
+public class DeleteCareerHandler : IRequestHandler<DeleteCareer, int>
 {
     
     private readonly ICareerRepository _repository;
@@ -9,7 +9,7 @@ public class DeleteCareerHandler : IRequestHandler<DeleteCareer, Career>
     {
         _repository = repository;
     }
-    public async Task<Career> Handle(DeleteCareer request, CancellationToken cancellationToken)
+    public async Task<int> Handle(DeleteCareer request, CancellationToken cancellationToken)
     {
         var career = await _repository.GetById(request.Career);
         var modifiedRows = await _repository.Delete(career);

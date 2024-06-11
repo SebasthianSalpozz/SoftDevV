@@ -6,14 +6,11 @@ public abstract class AbstractException : Exception
 
   public Severity Severity { get; protected set; }
 
-  protected readonly LogHandler _logHandler;
-
   public AbstractException(string friendlyMessage, Severity severity) 
   : base(friendlyMessage)
   {
     FriendlyMessage = friendlyMessage;
     Severity = severity;
-    _logHandler = new LogHandler();
   }
 
   public AbstractException(Exception innerException, string friendlyMessage, Severity severity)

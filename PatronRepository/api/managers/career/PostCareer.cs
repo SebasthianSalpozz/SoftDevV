@@ -1,6 +1,6 @@
 using MediatR;
 
-public class PostCareer : IRequest<Career>
+public class PostCareer : IRequest<int>
 {
 public Career Career { get; set; }
 

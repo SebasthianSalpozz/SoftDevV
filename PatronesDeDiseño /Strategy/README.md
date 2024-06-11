@@ -24,3 +24,17 @@
 ## Composicion con el Strategy 
 ### La composición en el patrón Strategy ofrece más flexibilidad, evita la sobrecarga de la jerarquía de clases, facilita la reutilización de código y promueve principios de diseño sólidos, en comparación con la herencia.
 ### La composición permite una mayor flexibilidad y modularidad al encapsular comportamientos en objetos separados. Cada objeto puede tener su propia estrategia, que puede ser intercambiada dinámicamente en tiempo de ejecución. Esto promueve un diseño más flexible, extensible y fácil de mantener en comparación con la herencia.
+
+## Abstract Factory 
+### Nos permite producir familias de objetos relacionados sin especificar sus clases concretas sin embargo hay que tener cuidado que por que los factorys deben ser demasiado generales 
+
+## Chain of resposnsability 
+### Nos permite pasar solicitudes a lo largo de una cadena de manejadores al recibir una solicitud, cada manejador decide si la procesa o si la pasa al siguiente manejador de la cadena de cierta manera esto establece un contrato por lo cual se deberia de usar una clase abstracta 
+
+## Bridge 
+### Nos permite dividir una clase grande o un grupo de clases estrechamente relacionadas, en dos jerarquías separadas (abstracción e implementación) que pueden desarrollarse independientemente la una de la otra.
+
+## Que es un patron de diseño estructural 
+### Tratan la manera en que los objetos se conectan con otros objetos, para asegurar que los cambios del sistema no requieren cambiar esas conexiones.
+
+
