@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +21,8 @@ builder.Services.AddDbContext<BaseContext>(options
 builder.Logging.AddLog4Net("log.config");
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<ICareerRepository, CareerRepository>();
-
+builder.Services.AddScoped<IValidator<Student>, StudentValidator>();
+builder.Services.AddScoped<IValidator<Career>, CareerValidator>();
 
 builder.Services.AddControllers()
 								.AddJsonOptions(x 

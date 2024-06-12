@@ -1,27 +1,32 @@
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
+using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Project.Business.Careers;
+using FluentValidation;
 
 [ApiController]
 [Route("Project.Api/[controller]")]
 public class CareerController: ControllerBase
 {
     private readonly IMediator _mediator;
+    private readonly IMapper _mapper;
 
-    public CareerController(IMediator mediator)
+    private readonly IValidator<Career> _validator;
+
+    public CareerController(IMediator mediator, IMapper mapper, IValidator<Career> validator)
     {
         _mediator = mediator;
+        _mapper = mapper;
+        _validator = validator;
     }
     
-    [HttpGet] 
-    public async Task<IActionResult> GetCareer()
-    {
-        var contract = new GetCareers();
-        var careers = await _mediator.Send(contract);
-        return Ok(careers);
-    }
+    // [HttpGet] 
+    // public async Task<IActionResult> GetCareer()
+    // {
+    //     var contract = new GetCareers();
+    //     var careers = await _mediator.Send(contract);
+    //     return Ok(careers);
+    // }
     
     [HttpGet("{careerId}")]
     public async Task<IActionResult> GetCareerById([Required]Guid careerId)
@@ -29,6 +34,7 @@ public class CareerController: ControllerBase
         var contract = new GetCareerById(careerId);
        
         var career = await _mediator.Send(contract);
+        var response = _mapper.Map<CareerDTO>(career);
         return Ok(career);
     }
 

@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "VSRKOkpkF+sozH6Q7OuU+fje+UVnynN8ThrhosCN5TkAQrflMMU88oK5XVXldWtokmn30Od9rrIOfpQwoHqWYg==",
+  "dgSpecHash": "3TOo1CYVAa+U2Su13GGGW5fjwICR3anw+XdLYeTMND5mSPIS/tAW0lNuiClXOjPK3/IjQRvjuX8spGovXdo1Zw==",
   "success": true,
   "projectFilePath": "/home/fundacion/Quinto Semestre/Desarrollo V/Desarrollo-de-Software-V/SoftDevV/PatronRepository/PatronRepository.csproj",
   "expectedPackageFiles": [
     "/home/fundacion/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
+    "/home/fundacion/.nuget/packages/fluentvalidation/11.9.2/fluentvalidation.11.9.2.nupkg.sha512",
+    "/home/fundacion/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/home/fundacion/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "/home/fundacion/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/fundacion/.nuget/packages/log4net/2.0.15/log4net.2.0.15.nupkg.sha512",
     "/home/fundacion/.nuget/packages/mediatr/12.2.0/mediatr.12.2.0.nupkg.sha512",
