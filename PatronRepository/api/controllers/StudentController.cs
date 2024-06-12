@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using MediatR;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -9,11 +10,13 @@ public class StudentController : ControllerBase
 {
   private readonly IMediator _mediator;
   private readonly IMapper _mapper;
+  private readonly IValidator<Student> _validator;
 
-  public StudentController(IMediator mediator, IMapper mapper)
+  public StudentController(IMediator mediator, IMapper mapper, IValidator<Student> validator)
   {
     _mediator = mediator;
     _mapper = mapper;
+    _validator = validator;
   }
 
   [HttpGet("idStudent")]
@@ -37,17 +40,39 @@ public class StudentController : ControllerBase
   }
 
   [HttpPost, Route("subscribe")]
-  public async Task<IActionResult> Post([Required] Guid idCareer, Student student)
+  public async Task<IActionResult> Post([Required] String careerCode, StudentDTO studentDTO)
   {
-    return Ok();
+    var student = _mapper.Map<Student>(studentDTO);
+    var result = await _validator.ValidateAsync(student);
+
+    if (!result.IsValid)
+    {
+      return BadRequest(result.Errors);
+    }
+
+    var contract = new SubscribeStudentMiddleData (student, careerCode);
+    var middleResponse = await _mediator.Send(contract);
+    var careers = _mapper.Map<IList<CareerDTO>>(middleResponse);
+    return Ok(careers);
   }
 
+
   [HttpPost]
-  public async Task<IActionResult> Post([FromBody] Student student)
+  public async Task<IActionResult> Post([FromBody] StudentDTO studentDTO)
   {
-    var contract = new PostStudent(student);
-    var response = await _mediator.Send(contract);
-    return Ok(response);    
+    var student = _mapper.Map<Student>(studentDTO);
+    var result = await _validator.ValidateAsync(student);
+
+    if (!result.IsValid)
+    {
+      return BadRequest(result.Errors);
+    }
+
+    var contract = new PostStudent (student);
+    var middleResponse = await _mediator.Send(contract);
+    var createStatus = _mapper.Map<int>(middleResponse);
+    return Ok(createStatus);
+
   }
 
   [HttpPut]

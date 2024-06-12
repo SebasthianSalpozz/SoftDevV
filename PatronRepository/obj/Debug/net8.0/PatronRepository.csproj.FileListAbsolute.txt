@@ -231,3 +231,6 @@
 /home/fundacion/Quinto Semestre/Desarrollo V/Desarrollo-de-Software-V/SoftDevV/PatronRepository/obj/Debug/net8.0/PatronRepository.pdb
 /home/fundacion/Quinto Semestre/Desarrollo V/Desarrollo-de-Software-V/SoftDevV/PatronRepository/obj/Debug/net8.0/PatronRepository.genruntimeconfig.cache
 /home/fundacion/Quinto Semestre/Desarrollo V/Desarrollo-de-Software-V/SoftDevV/PatronRepository/obj/Debug/net8.0/ref/PatronRepository.dll
+/home/fundacion/Quinto Semestre/Desarrollo V/Desarrollo-de-Software-V/SoftDevV/PatronRepository/bin/Debug/net8.0/FluentValidation.dll
+/home/fundacion/Quinto Semestre/Desarrollo V/Desarrollo-de-Software-V/SoftDevV/PatronRepository/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
+/home/fundacion/Quinto Semestre/Desarrollo V/Desarrollo-de-Software-V/SoftDevV/PatronRepository/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll

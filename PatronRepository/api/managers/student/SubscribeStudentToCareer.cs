@@ -1,13 +1,14 @@
-// using MediatR;
 
-// public class SubscribeStudentToCareer : IRequest<int, int>
-// {
-//     public Guid IdStudent { get; set; }
-//     public Guid IdCareer { get; set; }
+using MediatR;
 
-//     public SubscribeStudentToCareer(Guid idStudent, Guid idCareer)
-//     {
-//         IdStudent = idStudent;
-//         IdCareer = idCareer;
-//     }
-// }
+public class SubscribeStudentMiddleData : IRequest<IList<Career>>
+{
+    public Student Student { get; set; }
+    public String CareerCode { get; set; }
+
+    public SubscribeStudentMiddleData(Student student, String careerCode)
+    {
+        Student = student;
+        CareerCode = careerCode;
+    }
+}
